@@ -51,6 +51,6 @@ function convertRomanToInteger() {
         }
     }
 
-    document.getElementById("convertedOutput").innerText = "Integer Value: " + (sum > 0 ? sum : "not implemented yet! or invalid input!");
+    document.getElementById("convertedOutput").innerText = "Integer Value: " + (sum > 0 ? sum : "not implemented yet!");
 
 }
