@@ -25,17 +25,32 @@ function convertRomanToInteger() {
     } else if (arrayLength === 2) {
         const index0 = romanValues[romanArray[arrayLength - 2]];
         const index1 = romanValues[romanArray[arrayLength - 1]];
-        if (index0 >= index1) {
-            sum = index0 + index1;
-        } else {
-            sum = index1 - index0;
+        sum = calculateTwoRomanDigits(index0, index1);
+    } else if (arrayLength === 3) {
+        const index0 = romanValues[romanArray[arrayLength - 3]];
+        const index1 = romanValues[romanArray[arrayLength - 2]];
+        const index2 = romanValues[romanArray[arrayLength - 1]];
+        if ((index0 >= index1) >= index2) {
+            sum = index0;
+            sum += calculateTwoRomanDigits(index1, index2);
+        } else if ((index0 <= index1) <= index2) {
+            sum = index2;
+            sum -= calculateTwoRomanDigits(index0, index1);
         }
     } else {
         sum = "not implemented yet!";
     }
 
-    document.getElementById("convertedOutput").innerText = "Integer Value: " + sum;
 
-    sum = 0;
+    //function to calculate 2 digits
+    function calculateTwoRomanDigits(digit1, digit2) {
+        if (digit1 >= digit2) {
+            return digit1 + digit2;
+        } else {
+            return digit2 - digit1;
+        }
+    }
+
+    document.getElementById("convertedOutput").innerText = "Integer Value: " + (sum > 0 ? sum : "not implemented yet! or invalid input!");
 
 }
