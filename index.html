@@ -2,22 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Code Kitchen</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
-    <h1>Header</h1>
-
+    <h1>Some Tasks</h1>
 </header>
 <main>
-    <h2>Main</h2>
-
+    <div class="container">
+        <h3>Roman to Integer</h3>
+        <p>Insert a roman number to convert it to an Integer</p>
+        <label for="romanNumber">Roman Number: </label>
+        <input type="text" id="romanNumber" placeholder="VII or vii">
+        <br>
+        <br>
+        <button id="convertButton" onclick="convertRomanToInteger()">Calculate</button>
+        <br>
+        <br>
+        <label type="text" id="convertedOutput">Integer Value: </label>
+        <div class="background-image">
+            <img src="media/romanBild.jpg" alt="Roman" style="width: 544px; height: 347px;">
+        </div>
+    </div>
 </main>
 <footer>
-    <h2>Footer</h2>
-
+    <p>Code Kitchen FS24</p>
 </footer>
-    <script src="venividivici/romanToInteger.js"></script>
-    <script src="venividivici/romanToIntegerTest.js"></script>
+<script src="Woche01/venividivici/romanToInteger.js"></script>
+<script src="Woche01/venividivici/romanToIntegerTest.js"></script>
 </body>
 </html>
